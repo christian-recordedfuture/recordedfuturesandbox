@@ -102,8 +102,8 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "fetch report",
-            "identifier": "fetch_report",
+            "action": "get report",
+            "identifier": "get_report",
             "description": "Fetch a Recorded Future Sandbox analysis report based on ID value",
             "type": "investigate",
             "read_only": true,

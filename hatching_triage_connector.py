@@ -1,6 +1,24 @@
+# File: hatching_triage_connector.py
+#
 # Copyright (C) 2020-2022 Hatching B.V.
-# Recorded Future Sandbox
-# All rights reserved.
+#
+# This unpublished material is proprietary to Recorded Future. All
+# rights reserved. The methods and techniques described herein are
+# considered trade secrets and/or confidential. Reproduction or
+# distribution, in whole or in part, is forbidden except by express
+# written permission of Recorded Future.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under
+# the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+# either express or implied. See the License for the specific language governing permissions
+# and limitations under the License.
+
 
 import phantom.app as phantom
 import phantom.rules as prules
@@ -110,7 +128,7 @@ class TriageConnector(BaseConnector):
 
         return action_result.set_status(phantom.APP_SUCCESS)
 
-    def _handle_fetch_report(self, param):
+    def _handle_get_report(self, param):
         action_result = self.add_action_result(ActionResult(dict(param)))
 
         self.save_progress("Checking if Recorded Future Sandbox is up")
@@ -210,7 +228,7 @@ class TriageConnector(BaseConnector):
             "test_connectivity": self._handle_test_connectivity,
             "detonate_file": self._handle_detonate_file,
             "detonate_url": self._handle_detonate_url,
-            "fetch_report": self._handle_fetch_report,
+            "get_report": self._handle_get_report,
             "get_status": self._get_status,
         }
 
